@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --color-poke-grass: #78cd54;
+  --color-poke-fire: #ff421c;
+  --color-poke-water: #1cb8ff;
+  --color-poke-bug: #83c300;
+  --color-poke-normal: #9fa19f;
+  --color-poke-poison: #9141cb;
+  --color-poke-electric: #f1c500;
+  --color-poke-ground: #915121;
+  --color-poke-fairy: #f5a9e3;
+  --color-poke-fighting: #ff9a00;
+  --color-poke-psychic: #ef4179;
+  --color-poke-rock: #afa981;
+  --color-poke-ghost: #704170;
+  --color-poke-ice: #3dcef3;
+  --color-poke-dragon: #5060e1;
+  --color-poke-dark: #624d4e;
+  --color-poke-steel: #60a1b8;
+  --color-poke-flying: #81b9ef;
+}
+
+body {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+.glass-panel {
+  @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-lg;
+}
+
+.type-badge {
+  @apply px-3 py-1 rounded-full text-xs font-bold text-white uppercase tracking-wider shadow-sm;
+}
