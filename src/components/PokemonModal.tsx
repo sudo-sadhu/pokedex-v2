@@ -36,7 +36,12 @@ export default function PokemonModal({ pokemon }: { pokemon: any }) {
       />
       
       {/* Modal Content */}
-      <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row animate-in fade-in zoom-in duration-300">
+      <div 
+        role="dialog" 
+        aria-modal="true" 
+        aria-labelledby="pokemon-name"
+        className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row animate-in fade-in zoom-in duration-300"
+      >
         
         {/* Left side: Image and color background */}
         <div 
@@ -46,9 +51,10 @@ export default function PokemonModal({ pokemon }: { pokemon: any }) {
           <div className="absolute top-4 left-4">
             <button 
               onClick={close}
+              aria-label="Close modal"
               className="md:hidden w-8 h-8 flex items-center justify-center bg-white/30 rounded-full text-white hover:bg-white/50 transition"
             >
-              ✕
+              <span aria-hidden="true">✕</span>
             </button>
           </div>
           <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,white_0%,transparent_70%)]" />
@@ -73,12 +79,13 @@ export default function PokemonModal({ pokemon }: { pokemon: any }) {
         <div className="w-full md:w-3/5 p-6 sm:p-8 bg-white relative">
           <button 
             onClick={close}
+            aria-label="Close modal"
             className="hidden md:flex absolute top-4 right-4 w-8 h-8 items-center justify-center text-slate-400 hover:bg-slate-100 rounded-full transition"
           >
-            ✕
+            <span aria-hidden="true">✕</span>
           </button>
           
-          <h1 className="text-3xl font-black capitalize text-slate-800 mb-4">
+          <h1 id="pokemon-name" className="text-3xl font-black capitalize text-slate-800 mb-4">
             {pokemon.name.replace('-', ' ')}
           </h1>
           

@@ -15,7 +15,7 @@ export default function PokemonCard({ pokemon, selectedType }: PokemonCardProps)
     : `/?pokemon=${pokemon.id}`;
 
   return (
-    <Link href={href} className="block group">
+    <Link href={href} className="block group" aria-label={`View details for ${pokemon.name.replace('-', ' ')}`}>
       <div className="relative overflow-hidden rounded-2xl glass-panel transition-all duration-300 hover:shadow-xl hover:-translate-y-2 hover:scale-[1.02] cursor-pointer aspect-square sm:aspect-auto sm:h-[300px]">
         {/* Background gradient based on primary type */}
         <div 
