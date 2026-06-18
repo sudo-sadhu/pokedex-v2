@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased min-h-screen bg-slate-50 overflow-y-scroll`}>
+      <body className={`${inter.className} antialiased min-h-screen bg-background text-foreground overflow-y-scroll`}>
         {children}
       </body>
     </html>

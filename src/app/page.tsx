@@ -55,7 +55,7 @@ export default async function Home({ searchParams }: PageProps) {
   }
 
   return (
-    <div className="relative min-h-screen bg-slate-50 flex flex-col">
+    <div className="relative min-h-screen bg-background flex flex-col">
       <Header />
       
       <main className="flex-grow flex flex-col relative z-10">

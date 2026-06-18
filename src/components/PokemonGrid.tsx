@@ -8,7 +8,7 @@ interface PokemonGridProps {
 export default function PokemonGrid({ pokemonList, selectedType }: PokemonGridProps) {
   if (pokemonList.length === 0) {
     return (
-      <div className="w-full py-20 flex flex-col items-center justify-center text-slate-500">
+      <div className="w-full py-20 flex flex-col items-center justify-center text-muted">
         <div className="text-6xl mb-4 opacity-50">🔍</div>
         <p className="text-xl font-medium">No Pokémon found for this category.</p>
       </div>

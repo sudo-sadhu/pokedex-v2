@@ -36,7 +36,7 @@ export default function PokemonModal({ pokemon }: { pokemon: any }) {
       />
       
       {/* Modal Content */}
-      <div className="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row animate-in fade-in zoom-in duration-300">
+      <div className="relative w-full max-w-2xl bg-surface rounded-3xl shadow-2xl overflow-hidden flex flex-col md:flex-row animate-in fade-in zoom-in duration-300">
         
         {/* Left side: Image and color background */}
         <div 
@@ -70,15 +70,15 @@ export default function PokemonModal({ pokemon }: { pokemon: any }) {
         </div>
 
         {/* Right side: Details */}
-        <div className="w-full md:w-3/5 p-6 sm:p-8 bg-white relative">
+        <div className="w-full md:w-3/5 p-6 sm:p-8 bg-surface relative">
           <button 
             onClick={close}
-            className="hidden md:flex absolute top-4 right-4 w-8 h-8 items-center justify-center text-slate-400 hover:bg-slate-100 rounded-full transition"
+            className="hidden md:flex absolute top-4 right-4 w-8 h-8 items-center justify-center text-muted hover:bg-surface-hover rounded-full transition"
           >
             ✕
           </button>
           
-          <h1 className="text-3xl font-black capitalize text-slate-800 mb-4">
+          <h1 className="text-3xl font-black capitalize text-foreground mb-4">
             {pokemon.name.replace('-', ' ')}
           </h1>
           
@@ -95,15 +95,15 @@ export default function PokemonModal({ pokemon }: { pokemon: any }) {
           </div>
           
           <div className="grid grid-cols-2 gap-4 mb-6">
-            <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 text-center">
-              <span className="block text-xs font-bold text-slate-400 uppercase mb-1">Height</span>
-              <span className="text-lg font-semibold text-slate-700">
+            <div className="bg-background p-4 rounded-2xl border border-border text-center">
+              <span className="block text-xs font-bold text-muted uppercase mb-1">Height</span>
+              <span className="text-lg font-semibold text-foreground">
                 {pokemon.height ? `${pokemon.height / 10} m` : '???'}
               </span>
             </div>
-            <div className="bg-slate-50 p-4 rounded-2xl border border-slate-100 text-center">
-              <span className="block text-xs font-bold text-slate-400 uppercase mb-1">Weight</span>
-              <span className="text-lg font-semibold text-slate-700">
+            <div className="bg-background p-4 rounded-2xl border border-border text-center">
+              <span className="block text-xs font-bold text-muted uppercase mb-1">Weight</span>
+              <span className="text-lg font-semibold text-foreground">
                 {pokemon.weight ? `${pokemon.weight / 10} kg` : '???'}
               </span>
             </div>
@@ -111,19 +111,19 @@ export default function PokemonModal({ pokemon }: { pokemon: any }) {
 
           {pokemon.stats && pokemon.stats.length > 0 && (
             <div>
-              <h3 className="text-sm font-bold text-slate-800 uppercase mb-3">Base Stats</h3>
+              <h3 className="text-sm font-bold text-foreground uppercase mb-3">Base Stats</h3>
               <div className="space-y-3">
                 {pokemon.stats.map((stat: any) => {
                   const statPercentage = Math.min(100, (stat.value / 255) * 100);
                   return (
                     <div key={stat.name} className="flex items-center gap-3">
-                      <span className="w-24 text-xs font-semibold text-slate-500 uppercase tracking-wider">
+                      <span className="w-24 text-xs font-semibold text-muted uppercase tracking-wider">
                         {stat.name.replace('-', ' ')}
                       </span>
-                      <span className="w-8 text-sm font-bold text-slate-700 text-right">
+                      <span className="w-8 text-sm font-bold text-foreground text-right">
                         {stat.value}
                       </span>
-                      <div className="flex-1 h-2 bg-slate-100 rounded-full overflow-hidden">
+                      <div className="flex-1 h-2 bg-border rounded-full overflow-hidden">
                         <div 
                           className="h-full rounded-full transition-all duration-1000 ease-out"
                           style={{ 
