@@ -6,26 +6,34 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?logo=typescript)](https://www.typescriptlang.org/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-Welcome to **Pokédex V2**, a modern, blazing-fast, and universally accessible Pokédex application built for the web.
+Welcome to **Pokédex V2**, a modern, blazing-fast Pokédex application built for the web.
 
-Pokédex V2 is more than just a typical Pokémon database; it is a showcase of modern web engineering, prioritizing performance, user experience, and most importantly, **radical accessibility**.
+Pokédex V2 is a comprehensive database designed for Pokémon trainers and fans to explore, search, and filter the vast world of Pokémon with a highly performant and modern user experience.
 
 ---
 
 ## 🌟 Highlight Features
 
-Our primary focus for V2 was ensuring that every Pokémon fan, regardless of their visual abilities, can fully experience and enjoy the application.
+### 🏷️ Categorized Type Browsing
+* Filter and explore Pokémon by their primary types (Normal, Fire, Water, Grass, Electric, and more).
+* Easily switch between categories to find the exact Pokémon you're searching for.
 
-### 🌓 Advanced Dark Mode
-Engineered for optimal contrast and eye comfort, our Dark Mode dynamically adjusts to system preferences or can be toggled manually. The color palettes have been mathematically tuned to reduce eye strain while preserving the vibrant essence of the Pokémon universe.
+### 👑 Legendary, Mega & Ultra Beasts
+* Special dedicated categories for Legendary Pokémon, Mega Evolutions, and mysterious Ultra Beasts.
+* Curated filters make discovering these high-tier Pokémon effortless.
 
-### 👁️ Universal Accessibility (Blind & Colorblind Support)
-*Engineered by AI swarms*, our accessibility features set a new standard for open-source applications:
-- **Colorblind-Safe Palettes:** All type indicators, charts, and visual elements are rendered using colorblind-safe palettes, ensuring indistinguishable elements are a thing of the past (supports Deuteranomaly, Protanomaly, and Tritanomaly).
-- **Screen Reader First:** Semantic HTML and rich ARIA attributes guarantee a flawless experience for completely blind users navigating via screen readers.
-- **Keyboard Navigation:** 100% of the application is deeply navigable using only a keyboard with visible, intuitive focus states.
+### 🎴 Rich Pokémon Cards
+* Each Pokémon is presented in its own beautifully designed, interactive card showing its name, number, artwork, and primary types.
+* Hover states and subtle animations provide an engaging and clean visual layout.
+
+### 🧬 Stats & Evolution Chains
+* Clicking on any Pokémon opens a detailed modal view featuring their base stats.
+* Easily trace the evolution chain of each Pokémon to see their growth path and forms.
 
 ---
+
+## 👁️ Inclusive Experience
+Pokédex V2 is designed to be accessible to everyone. The application fully supports keyboard navigation, screen readers, and features a built-in Dark Mode and colorblind-safe color palettes, allowing visually impaired and blind users to explore the database just as easily.
 
 ## 🛠️ Tech Stack
 
