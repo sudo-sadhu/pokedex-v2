@@ -1,7 +1,7 @@
 # Deployment Strategy & Analysis
 
 ## Overview
-This document outlines the deployment readiness and potential hosting strategies for the `pokedex-nextjs` application. 
+This document outlines the deployment readiness and potential hosting strategies for the `pokedex-v2` application. 
 
 ## Readiness Verdict: READY ✅
 The repository is **properly configured and ready for deployment** to any Node.js-based hosting platform.
