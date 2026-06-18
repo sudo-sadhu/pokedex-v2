@@ -1,24 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  --color-poke-grass: #78cd54;
-  --color-poke-fire: #ff421c;
-  --color-poke-water: #1cb8ff;
-  --color-poke-bug: #83c300;
-  --color-poke-normal: #9fa19f;
-  --color-poke-poison: #9141cb;
-  --color-poke-electric: #f1c500;
-  --color-poke-ground: #915121;
-  --color-poke-fairy: #f5a9e3;
-  --color-poke-fighting: #ff9a00;
-  --color-poke-psychic: #ef4179;
-  --color-poke-rock: #afa981;
-  --color-poke-ghost: #704170;
-  --color-poke-ice: #3dcef3;
-  --color-poke-dragon: #5060e1;
-  --color-poke-dark: #624d4e;
-  --color-poke-steel: #60a1b8;
-  --color-poke-flying: #81b9ef;
+  --color-poke-grass: #2d8021;
+  --color-poke-fire: #b32a12;
+  --color-poke-water: #1178a8;
+  --color-poke-bug: #5b8700;
+  --color-poke-normal: #6e6f6e;
+  --color-poke-poison: #662d8f;
+  --color-poke-electric: #a88a00;
+  --color-poke-ground: #663917;
+  --color-poke-fairy: #bd3e99;
+  --color-poke-fighting: #b36b00;
+  --color-poke-psychic: #a62d54;
+  --color-poke-rock: #7a765a;
+  --color-poke-ghost: #4d2d4d;
+  --color-poke-ice: #2a8eab;
+  --color-poke-dragon: #38439e;
+  --color-poke-dark: #453637;
+  --color-poke-steel: #437080;
+  --color-poke-flying: #5a81a8;
 
   /* Dark mode design tokens */
   --color-background: var(--bg);
