@@ -2,6 +2,9 @@ import Header from '@/components/Header';
 import CategoryBar from '@/components/CategoryBar';
 import PokemonGrid from '@/components/PokemonGrid';
 import PokemonModal from '@/components/PokemonModal';
+import { Suspense } from 'react';
+
+export const unstable_instant = true;
 
 // We must import these functions from the backend engineer's files
 import { 
@@ -64,7 +67,9 @@ export default async function Home({ searchParams }: PageProps) {
         
         {/* Main Grid Content */}
         <div className="flex-grow">
-          <PokemonGrid pokemonList={pokemonList} selectedType={selectedType} />
+          <Suspense fallback={<div className="flex justify-center items-center h-64"><p className="text-xl text-gray-500">Loading Pokémon...</p></div>}>
+            <PokemonGrid pokemonList={pokemonList} selectedType={selectedType} />
+          </Suspense>
         </div>
       </main>
 
