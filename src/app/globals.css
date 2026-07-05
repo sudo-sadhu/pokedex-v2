@@ -19,15 +19,49 @@
   --color-poke-dark: #453637;
   --color-poke-steel: #437080;
   --color-poke-flying: #5a81a8;
+
+  /* Dark mode design tokens */
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-border: var(--border);
+  --color-border-subtle: var(--border-subtle);
+  --color-muted: var(--muted);
+}
+
+:root {
+  --bg: #f8fafc;
+  --fg: #0f172a;
+  --surface: #ffffff;
+  --surface-hover: #f1f5f9;
+  --border: #e2e8f0;
+  --border-subtle: rgba(255, 255, 255, 0.4);
+  --muted: #64748b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f172a;
+    --fg: #f8fafc;
+    --surface: #1e293b;
+    --surface-hover: #334155;
+    --border: #334155;
+    --border-subtle: rgba(255, 255, 255, 0.1);
+    --muted: #94a3b8;
+  }
 }
 
 body {
-  background-color: #f8fafc;
-  color: #0f172a;
+  background-color: var(--bg);
+  color: var(--fg);
 }
 
 .glass-panel {
-  @apply bg-white/70 backdrop-blur-xl border border-white/40 shadow-lg;
+  background-color: color-mix(in srgb, var(--surface) 70%, transparent);
+  backdrop-filter: blur(24px);
+  border: 1px solid var(--border-subtle);
+  @apply shadow-lg;
 }
 
 .type-badge {

@@ -9,6 +9,7 @@ import {
   getPokemonByCategory, 
   getPokemonDetails 
 } from '@/lib/pokeapi';
+import type { PokemonListItem } from '@/lib/types';
 
 interface PageProps {
   searchParams: Promise<{ type?: string; pokemon?: string }>;
@@ -29,7 +30,7 @@ export default async function Home({ searchParams }: PageProps) {
   ];
 
   // Fetch pokemon list based on the selected type
-  let pokemonList: any[] = [];
+  let pokemonList: PokemonListItem[] = [];
   try {
     if (selectedType) {
       pokemonList = await getPokemonByCategory(selectedType);
@@ -55,7 +56,7 @@ export default async function Home({ searchParams }: PageProps) {
   }
 
   return (
-    <div className="relative min-h-screen bg-slate-50 flex flex-col">
+    <div className="relative min-h-screen bg-background flex flex-col">
       <Header />
       
       <main className="flex-grow flex flex-col relative z-10">

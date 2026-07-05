@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import type { PokemonListItem } from '@/lib/types';
 
 interface PokemonCardProps {
-  pokemon: any;
+  pokemon: PokemonListItem;
   selectedType?: string;
 }
 
@@ -24,12 +25,12 @@ export default function PokemonCard({ pokemon, selectedType }: PokemonCardProps)
         />
         
         {/* ID Number */}
-        <div className="absolute top-3 right-4 text-slate-800/20 font-black text-4xl z-0 pointer-events-none group-hover:text-slate-800/30 transition-colors">
+        <div className="absolute top-3 right-4 text-foreground/20 font-black text-4xl z-0 pointer-events-none group-hover:text-foreground/30 transition-colors">
           #{String(pokemon.id).padStart(3, '0')}
         </div>
 
         <div className="relative z-10 p-5 flex flex-col h-full">
-          <h2 className="text-xl font-bold capitalize text-slate-800 mb-2">
+          <h2 className="text-xl font-bold capitalize text-foreground mb-2">
             {pokemon.name.replace('-', ' ')}
           </h2>
           
@@ -53,7 +54,7 @@ export default function PokemonCard({ pokemon, selectedType }: PokemonCardProps)
             />
             
             <Image
-              src={pokemon.artwork || pokemon.sprite || ''}
+              src={pokemon.image || ''}
               alt={pokemon.name}
               fill
               className="object-contain drop-shadow-xl group-hover:scale-110 transition-transform duration-500 ease-out"
