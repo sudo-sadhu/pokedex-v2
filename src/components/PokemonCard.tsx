@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import type { PokemonListItem } from '@/lib/types';
 
 interface PokemonCardProps {
-  pokemon: any;
+  pokemon: PokemonListItem;
   selectedType?: string;
 }
 
@@ -53,7 +54,7 @@ export default function PokemonCard({ pokemon, selectedType }: PokemonCardProps)
             />
             
             <Image
-              src={pokemon.artwork || pokemon.sprite || ''}
+              src={pokemon.image || ''}
               alt={pokemon.name}
               fill
               className="object-contain drop-shadow-xl group-hover:scale-110 transition-transform duration-500 ease-out"

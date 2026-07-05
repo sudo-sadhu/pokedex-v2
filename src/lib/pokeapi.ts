@@ -12,6 +12,7 @@ import type {
   RawPokemonSpecies,
   RawEvolutionChain,
   RawChainLink,
+  RawType,
 } from './types';
 
 const BASE_URL = 'https://pokeapi.co/api/v2';
@@ -245,8 +246,8 @@ export async function getPokemonByCategory(category: string): Promise<PokemonLis
     }
 
     // specific type
-    const typeData = await fetchJson<any>(`${BASE_URL}/type/${cat}`);
-    const matches = typeData.pokemon.map((p: any) => p.pokemon).slice(0, 24);
+    const typeData = await fetchJson<RawType>(`${BASE_URL}/type/${cat}`);
+    const matches = typeData.pokemon.map((p) => p.pokemon).slice(0, 24);
     return hydratePokemonList(matches);
   } catch (error) {
     console.error(`[getPokemonByCategory] Error fetching category ${cat}:`, error);

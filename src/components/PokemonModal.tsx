@@ -1,13 +1,23 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { useRouter, useSearchParams } from 'next/navigation';
+import type { PokemonDetails } from '@/lib/types';
 
-export default function PokemonModal({ pokemon }: { pokemon: any }) {
+export default function PokemonModal({ pokemon }: { pokemon: PokemonDetails }) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const mainType = pokemon.types[0] || 'normal';
+
+  const close = useCallback(() => {
+    const type = searchParams.get('type');
+    if (type) {
+      router.push(`/?type=${type}`, { scroll: false });
+    } else {
+      router.push('/', { scroll: false });
+    }
+  }, [router, searchParams]);
 
   // Handle escape key to close
   useEffect(() => {
@@ -16,16 +26,7 @@ export default function PokemonModal({ pokemon }: { pokemon: any }) {
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
-
-  const close = () => {
-    const type = searchParams.get('type');
-    if (type) {
-      router.push(`/?type=${type}`, { scroll: false });
-    } else {
-      router.push('/', { scroll: false });
-    }
-  };
+  }, [close]);
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
@@ -65,7 +66,7 @@ export default function PokemonModal({ pokemon }: { pokemon: any }) {
           
           <div className="relative z-10 w-full aspect-square max-w-[250px]">
             <Image
-              src={pokemon.artwork || pokemon.sprite || ''}
+              src={pokemon.sprites?.officialArtwork || pokemon.sprites?.frontDefault || ''}
               alt={pokemon.name}
               fill
               className="object-contain drop-shadow-2xl"
@@ -116,11 +117,18 @@ export default function PokemonModal({ pokemon }: { pokemon: any }) {
             </div>
           </div>
 
-          {pokemon.stats && pokemon.stats.length > 0 && (
+          {pokemon.stats && (
             <div>
               <h3 className="text-sm font-bold text-foreground uppercase mb-3">Base Stats</h3>
               <div className="space-y-3">
-                {pokemon.stats.map((stat: any) => {
+                {[
+                  { name: 'hp', value: pokemon.stats.hp },
+                  { name: 'attack', value: pokemon.stats.attack },
+                  { name: 'defense', value: pokemon.stats.defense },
+                  { name: 'sp-atk', value: pokemon.stats['sp-atk'] },
+                  { name: 'sp-def', value: pokemon.stats['sp-def'] },
+                  { name: 'speed', value: pokemon.stats.speed }
+                ].map((stat) => {
                   const statPercentage = Math.min(100, (stat.value / 255) * 100);
                   return (
                     <div key={stat.name} className="flex items-center gap-3">

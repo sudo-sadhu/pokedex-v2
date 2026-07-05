@@ -1,7 +1,8 @@
 import PokemonCard from './PokemonCard';
+import type { PokemonListItem } from '@/lib/types';
 
 interface PokemonGridProps {
-  pokemonList: any[];
+  pokemonList: PokemonListItem[];
   selectedType?: string;
 }
 
