@@ -10,9 +10,9 @@ An accessibility-oriented version of the Pokédex V2 database client designed to
 
 ---
 
-## 👁️ Accessibility Design Patterns
+## 👁️ Accessibility Design Patterns & Verification
 
-This repository serves as a reference architecture for implementing modern web accessibility guidelines:
+This repository serves as a reference architecture for implementing modern web accessibility guidelines. The code has been audited using the `axe-core` library and manually tested using systems screen readers (macOS VoiceOver / Windows NVDA):
 - **ARIA Landmark & Roles**: Implements explicit ARIA landmarks (`role="menubar"`, `role="menuitem"`, `role="dialog"`, `aria-modal="true"`) to ensure clean navigation maps for screen readers (NVDA, JAWS, VoiceOver).
 - **Aria-Live Dynamic Announcements**: Employs polite dynamic announcements (`aria-live="polite"`) to notify screen-reader users of async state transitions when filtering categories or loading search inputs.
 - **Enhanced Focus & Keyboard Traps**: Implements custom keyboard navigation (`tabindex="0"`, focus rings, escape-key modal closures, and skip-links) to allow full system manipulation without relying on pointer devices.
