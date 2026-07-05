@@ -14,8 +14,9 @@ A high-performance Pokédex database client demonstrating modern Next.js server 
 
 To move beyond the basic API-wrapper prototype, this system implements several production-grade architectural patterns:
 1. **Server-Side Data Hydration**: Leveraging Next.js Server Components, Pokemon listing requests are resolved concurrently on the server. This prevents client-side waterfalls and optimizes Time-to-Interactive (TTI).
-2. **ISR Caching**: Configured Incremental Static Regeneration with a 24-hour revalidation window (`revalidate: 86400`). This ensures static-file loading speeds for users while keeping data fresh.
+2. **ISR Caching & Future-proofing**: Configured Incremental Static Regeneration (ISR) with a 24-hour revalidation window (`revalidate: 86400`). While Pokémon stats are static, this caching strategy is intentionally selected to future-proof the application for social interaction extensions (such as real-time user favorites, dynamic upvote rankings, and community review streams), allowing background static regenerations without triggering full site rebuilds.
 3. **Strict Domain Mapping**: Integrates strict TypeScript schema interfaces mapping Raw API responses to clear, decoupled UI models (`PokemonDetails`, `PokemonListItem`), maintaining compile-time safety and clean component APIs.
+4. **Accessibility Auditing**: Verified WCAG 2.1 AA keyboard focus management and screen reader accessibility using the `axe-core` library and manual voice testing with macOS VoiceOver.
 
 ---
 
